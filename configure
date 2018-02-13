@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Clone Graphene-SGX
+git clone --recursive https://github.com/oscarlab/graphene.git
+
+# Build Graphene-SGX
+cd graphene/Pal/src/host/Linux-SGX/signer
+openssl genrsa -3 -out enclave-key.pem 3072
+
+# Build PAL
+cd ../../../
+make SGX=1
+
+cd ../../LibOS
+make  
+
+
+
+
