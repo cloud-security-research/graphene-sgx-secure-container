@@ -8,7 +8,7 @@ def gen_dockerfile( image_name, app_name, bin_name, proj_dir) :
   if not os.path.exists(proj_dir + "/build") :
     os.makedirs(proj_dir + "/build")
   df =open(proj_dir + "/build/Dockerfile" + '.' + app_name, 'w')
-  df.write('# This file is auot-generated, any edits will be ignored\n')
+  df.write('# This file is auto-generated, any edits will be ignored\n')
 
   df.write('\n')
   # Choose the base image from the user input
@@ -27,7 +27,7 @@ def gen_dockerfile( image_name, app_name, bin_name, proj_dir) :
   df.write('RUN pip install protobuf && \ \n')
   df.write('    pip install pycrypto\n')
 
-  df.write('# Temproal fixes for Dependencies Issue #1: libcrypto.so.1.0.0 and libssl.so.1.0.0 have different locations \n')
+  df.write('# Temporal fixes for Dependencies Issue #1: libcrypto.so.1.0.0 and libssl.so.1.0.0 have different locations \n')
   df.write('RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 && \ \n')
   df.write('    ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 /lib/x86_64-linux-gnu/libssl.so.1.0.0 \n')
   
