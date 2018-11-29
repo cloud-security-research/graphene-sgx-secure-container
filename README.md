@@ -11,6 +11,10 @@ Launching a GSC container instance includes following steps:
 
 (1) Make sure there is a Docker container image of your application in the local or remote image repository.
 
+(2) Prerequisites: 
+    1. Intel SGX PSW/SDK https://github.com/intel/linux-sgx
+    2. Intel SGX Driver https://github.com/intel/linux-sgx-driver
+
 (2) Download and build Graphene-SGX, by executing:
     
     ./configure
