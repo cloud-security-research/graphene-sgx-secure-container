@@ -19,7 +19,7 @@ Launching a GSC container instance includes following steps:
     
     ./configure
 
-(3) Launch a GSC container via the following command:
+(4) Launch a GSC container via the following command:
 
    bin/gsce run [All the arguments used for launching a normal Docker container] [Docker Image Name:Tag].
    
